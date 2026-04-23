@@ -1,5 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{margin:0;font-family:Inter, sans-serif;}
+/* ── CSS VARIABLES ── */
+:root {
+  --cream:   #F5EEE0;
+  --cream-2: #FAF4E8;
+  --cream-3: #EFE6D5;
+  --ink:     #0C1424;
+  --ink-2:   #121B30;
+  --orange:  #E85A3C;
+  --orange-2:#D94E2E;
+  --muted:   #5E6479;
+}
+
+/* ── BASE ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+::selection {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* ── UTILITY CLASSES ── */
+.font-serif-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ── SCROLL REVEAL ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── MARQUEE ── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+/* ── PULSE DOT ── */
+.pulse-dot {
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+/* ── SCROLLBAR HIDE ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── FAQ ACCORDION ── */
+/* Tailwind's grid-rows-[0fr] / grid-rows-[1fr] transition requires this */
+.accordion-body {
+  transition: grid-template-rows 0.35s ease, opacity 0.35s ease;
+}
