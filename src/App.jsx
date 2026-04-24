@@ -133,9 +133,9 @@ const INSIDE_RISKS = [
 
 const SENSORS = [
   { icon: 'phone',    name: 'Call Sensor',            desc: 'On-device voice AI that detects urgency, impersonation, scripting and coaching the moment a scammer starts talking.' },
-  { icon: 'globe',    name: 'Browser Guard',           desc: 'DOM-level detection of fake support pages, overlays, phishing kits and manipulated login flows — before a click becomes a loss.' },
+  { icon: 'globe',    name: 'Browser Guard',           desc: 'DOM-level detection of fake support pages, overlays, phishing kits and manipulated login flows, catching threats before a click becomes a loss.' },
   { icon: 'activity', name: 'Payment Journey Watch',   desc: "A human-state risk score on every authorized payment. Catches the 'I'm sending this myself' scams that existing fraud stacks miss." },
-  { icon: 'monitor',  name: 'Remote-Access Detector',  desc: 'Instant alerts the second AnyDesk, TeamViewer or screen-share enters the session — the number one vector in elder and SME fraud.' },
+  { icon: 'monitor',  name: 'Remote-Access Detector',  desc: 'Instant alerts the second AnyDesk, TeamViewer or screen-share enters the session. This is the number one vector in elder and SME fraud.' },
 ];
 
 const INTERVENTION_FEATURES = ['Graded friction', 'Trusted contact alert', 'Bank hand-off', 'Cooling-off receipt'];
@@ -157,10 +157,10 @@ const TESTIMONIALS = [
 ];
 
 const FAQS = [
-  { q: "How is this different from my bank's fraud detection?", a: "Bank fraud systems protect the account and the transaction. They cannot see the call you're on, the browser you're looking at, or the person coaching you. Vasorin sits at the human decision layer — across channels — and intervenes before the money moves." },
-  { q: 'Do you record my calls?', a: 'No. Vasorin runs entirely on-device. We never upload, store, or transmit raw audio. Only the risk signal — a small, privacy-preserving score — is ever shared, and only when you choose to involve a trusted contact or your bank.' },
-  { q: 'Is this only for older adults?', a: 'No. While elder fraud is a major vector, modern scams target every age group. Pig-butchering, investment scams, impersonation and deepfake voice attacks hit 30–50 year olds the hardest. Vasorin is a universal human-layer guardian.' },
-  { q: 'Can banks and insurers integrate Vasorin?', a: 'Yes. Vasorin ships as an API, SDK, secure intelligence feed or fully white-labeled experience. PSR-ready in the UK, PSD3-aligned in the EU, RBI-aware in India and on a SOC2 path — deployable in weeks, not quarters.' },
+  { q: "How is this different from my bank's fraud detection?", a: "Bank fraud systems protect the account and the transaction. They cannot see the call you're on, the browser you're looking at, or the person coaching you. Vasorin sits at the human decision layer, across channels, and intervenes before the money moves." },
+  { q: 'Do you record my calls?', a: 'No. Vasorin runs entirely on-device. We never upload, store, or transmit raw audio. Only the risk signal, a small privacy-preserving score, is ever shared, and only when you choose to involve a trusted contact or your bank.' },
+  { q: 'Is this only for older adults?', a: 'No. While elder fraud is a major vector, modern scams target every age group. Pig-butchering, investment scams, impersonation and deepfake voice attacks hit 30 to 50 year olds the hardest. Vasorin is a universal human-layer guardian.' },
+  { q: 'Can banks and insurers integrate Vasorin?', a: 'Yes. Vasorin ships as an API, SDK, secure intelligence feed or fully white-labeled experience. PSR-ready in the UK, PSD3-aligned in the EU, RBI-aware in India and on a SOC2 path, deployable in weeks not quarters.' },
 ];
 
 const FOOTER_LINKS = {
@@ -270,7 +270,7 @@ function useTypewriter(phrases, { speed = 45, pause = 2200, deletePause = 900 } 
     }
 
     if (!deleting && charIdx === current.length) {
-      // Only one phrase — stop and mark done
+      // Only one phrase: stop and mark done
       if (phrases.length === 1) { setDone(true); return; }
       const t = setTimeout(() => setDeleting(true), pause);
       return () => clearTimeout(t);
@@ -381,7 +381,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-8 text-[18px] leading-relaxed text-[var(--ink)]/75 max-w-[540px]">
-            Existing systems protect accounts. Vasorin protects the <em className="italic">human decision</em> — across calls, browsers, payments and devices — the moment a scammer tries to manipulate it.
+            Existing systems protect accounts. Vasorin protects the <em className="italic">human decision</em> across calls, browsers, payments and devices, the moment a scammer tries to manipulate it.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <button
@@ -452,7 +452,7 @@ const Problem = () => (
           Every fraud loss flows through a <em className="italic text-[var(--orange)]">human</em> being manipulated.
         </h2>
         <p className="mt-8 text-[17px] leading-relaxed text-[var(--ink)]/75 max-w-[540px]">
-          Banks protect accounts. Telcos protect networks. Card networks protect transactions. Nobody protects the person — which is why authorized-payment scams are now the <strong className="text-[var(--ink)]">largest fraud category on Earth</strong>.
+          Banks protect accounts. Telcos protect networks. Card networks protect transactions. Nobody protects the person. That is why authorized-payment scams are now the <strong className="text-[var(--ink)]">largest fraud category on Earth</strong>.
         </p>
         <div className="mt-10 grid grid-cols-2 gap-4 max-w-[480px]">
           <div className="bg-[#F7D9CF] rounded-2xl p-5">
@@ -469,7 +469,7 @@ const Problem = () => (
       <div className="fade-up">
         <div className="bg-[var(--ink)] text-white rounded-[28px] p-8 shadow-[0_30px_80px_-30px_rgba(12,20,36,0.45)]">
           <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2 text-[13px] text-white/70"><Activity className="w-4 h-4 text-[var(--orange)]" />Reported losses — last full year</div>
+            <div className="flex items-center gap-2 text-[13px] text-white/70"><Activity className="w-4 h-4 text-[var(--orange)]" />Reported losses, last full year</div>
             <div className="text-[12px] text-white/50">Source-linked</div>
           </div>
           <div className="divide-y divide-white/10">
@@ -498,7 +498,7 @@ const ThreatsRisks = () => (
   <section className="py-20 bg-[var(--cream-2)]">
     <div className="max-w-[1280px] mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-6">
 
-      {/* Outside threats — no heading, no icons, plain list */}
+      {/* Outside threats: no heading, no icons, plain list */}
       <div className="bg-white rounded-[28px] p-10 shadow-[0_10px_40px_-20px_rgba(12,20,36,0.15)] fade-up">
         <div className="text-[12px] font-medium tracking-[0.22em] uppercase text-[var(--orange)] mb-6">Outside threats</div>
         <ul className="space-y-5">
@@ -508,7 +508,7 @@ const ThreatsRisks = () => (
         </ul>
       </div>
 
-      {/* Inside risks — no heading, no icons, plain list */}
+      {/* Inside risks: no heading, no icons, plain list */}
       <div className="bg-[var(--ink)] text-white rounded-[28px] p-10 shadow-[0_10px_40px_-20px_rgba(12,20,36,0.35)] fade-up">
         <div className="text-[12px] font-medium tracking-[0.22em] uppercase text-[var(--orange)] mb-6">Inside risks</div>
         <ul className="space-y-5">
@@ -566,7 +566,7 @@ const Intervention = () => {
               The cooling-off second between <em className="italic text-[var(--orange)]">intent</em> and loss.
             </h2>
             <p className="mt-6 text-[16px] leading-relaxed text-white/75 max-w-[520px]">
-              When risk crosses threshold, Vasorin nudges, delays or pauses — asks the right question, loops in a trusted contact, and hands off to bank customer support with full context.
+              When risk crosses threshold, Vasorin nudges, delays or pauses. It asks the right question, loops in a trusted contact, and hands off to bank customer support with full context.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {INTERVENTION_FEATURES.map(f => (
@@ -578,8 +578,8 @@ const Intervention = () => {
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-white border border-[var(--cream-3)] flex items-center justify-center"><Shield className="w-5 h-5 text-[var(--orange)]" /></div>
               <div className="flex-1">
-                <div className="text-[12px] text-[var(--ink)]/60">Vasorin Alert — just now</div>
-                <div className="font-serif-display text-[22px] mt-0.5">Manipulation risk — HIGH</div>
+                <div className="text-[12px] text-[var(--ink)]/60">Vasorin Alert, just now</div>
+                <div className="font-serif-display text-[22px] mt-0.5">Manipulation risk: HIGH</div>
               </div>
             </div>
             <p className="mt-4 text-[14px] leading-relaxed text-[var(--ink)]/80">
@@ -609,7 +609,7 @@ const Families = () => {
           <div className="text-[12px] font-medium tracking-[0.22em] uppercase text-[var(--orange)]">For families</div>
           <h2 className="font-serif-display text-[48px] sm:text-[60px] leading-[1] mt-5 tracking-tight">Peace of mind for the people you love most.</h2>
           <p className="mt-6 text-[17px] leading-relaxed text-[var(--ink)]/75 max-w-[520px]">
-            A gentle, always-on guardian for parents and partners — on the phone, in the browser, in the banking app. No spying. No recording. Just intervention when it matters.
+            A gentle, always-on guardian for parents and partners. On the phone, in the browser, in the banking app. No spying. No recording. Just intervention when it matters.
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-3">
             {FAMILY_FEATURES.map(f => (
@@ -643,7 +643,7 @@ const Banks = () => {
         <div className="grid lg:grid-cols-3 gap-5">
           <div className="lg:col-span-2 bg-[var(--ink)] text-white rounded-[28px] p-10 fade-up">
             <p className="text-[17px] leading-relaxed text-white/80 max-w-[640px]">
-              APP reimbursement rules made authorized fraud your P&L problem. Vasorin is the only engine built across calls, browsers, devices and payment intent — deployed as API, SDK, feed or full white-label.
+              APP reimbursement rules made authorized fraud your P&L problem. Vasorin is the only engine built across calls, browsers, devices and payment intent. Deployed as API, SDK, feed or full white-label.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {BANKS_FEATURES.map(f => (
@@ -740,7 +740,7 @@ const FinalCTA = () => {
             Protect the human. <em className="italic text-[var(--orange)]">Stop the scam.</em> Before money moves.
           </h2>
           <p className="mt-8 text-[17px] text-white/75 max-w-[560px] relative">
-            Join the Vasorin early-access program — for families, and for the banks and insurers ready to deploy the human risk layer.
+            Join the Vasorin early-access program, for families, and for the banks and insurers ready to deploy the human risk layer.
           </p>
           <div className="mt-10 flex flex-wrap gap-3 relative">
             <button onClick={() => openWaitlist('Family')} className="inline-flex items-center gap-2 bg-[var(--orange)] hover:bg-[var(--orange-2)] text-white rounded-full px-6 py-[14px] text-[15px] font-medium transition-colors">
@@ -778,7 +778,7 @@ const Footer = () => (
     </div>
     <div className="max-w-[1280px] mx-auto px-6 lg:px-10 mt-12 pt-6 border-t border-[var(--cream-3)] flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[var(--ink)]/55">
       <div>© {new Date().getFullYear()} Vasorin AI. All rights reserved.</div>
-      <div>Built with privacy by design — on-device AI.</div>
+      <div>Built with privacy by design. On-device AI.</div>
     </div>
   </footer>
 );
@@ -823,7 +823,7 @@ const WaitlistModal = () => {
       submitWaitlist({ persona, email, name });
       setSubmitting(false);
       closeWaitlist();
-      window.toast?.success("You're on the list", { description: `We'll reach out shortly — ${persona}` });
+      window.toast?.success("You're on the list", { description: `We'll reach out shortly. ${persona}` });
     }, 500);
   };
 
